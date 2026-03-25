@@ -19,29 +19,30 @@
       width: 100vw;
       height: 100vh;
       display: flex;
-      justify-content: center;
+      /* אנחנו מצמידים את התוכן לימין בגלל שהגרף בעברית */
+      justify-content: flex-start; 
       align-items: center;
       overflow: hidden;
     }
 
-    /* הגדרות ברירת מחדל (למחשב) - מה ששלחת מקודם */
     iframe {
-      width: 180%; 
+      /* נגדיל את הרוחב ל-250% כדי לתת לעמודה האחרונה מקום לנשום */
+      width: 250%; 
       height: 150%; 
       border: none;
-      transform: scale(0.55); 
-      transform-origin: center center;
+      /* כיווץ ל-0.4 כדי להכניס את ה-250% לתוך המסך */
+      transform: scale(0.4); 
+      /* הקסם: הכיווץ מתחיל מהפינה הימנית העליונה */
+      transform-origin: top right; 
     }
 
-    /* --- כאן מגיע התיקון לטלפון --- */
+    /* תיקון מיוחד לטלפון */
     @media (max-width: 768px) {
       iframe {
-        /* בטלפון אנחנו צריכים שטח עבודה רחב יותר כדי שכל העמודות יכנסו בשורה */
-        width: 300%; 
-        height: 100%;
-        /* כיווץ אגרסיבי יותר כדי שה-300% יכנסו למסך קטן */
-        transform: scale(0.33); 
-        transform-origin: center center;
+        width: 350%; 
+        height: 120%;
+        transform: scale(0.28); 
+        transform-origin: top right;
       }
     }
   </style>
