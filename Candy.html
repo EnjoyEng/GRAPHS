@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>👉🎁 Prizes Graph</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <style>
     body, html {
@@ -12,34 +12,40 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #fcfcfc; /* צבע רקע שתואם לגרף */
+      background-color: #fcfcfc;
     }
 
     .container {
       width: 100vw;
       height: 100vh;
       display: flex;
-      justify-content: center; /* שומר על המכולה במרכז */
+      justify-content: center;
       align-items: center;
       overflow: hidden;
     }
 
+    /* הגדרות ברירת מחדל (למחשב) - מה ששלחת מקודם */
     iframe {
-      /* נשתמש ברוחב גדול כדי שגוגל לא יצופף את העמודות */
       width: 180%; 
       height: 150%; 
       border: none;
-      
-      /* הקסם: משנים את ה-scale ל-0.5 ומצמידים לימין */
       transform: scale(0.55); 
-      transform-origin: center center; /* אפשר לנסות "right center" אם זה עדיין נחתך */
-      
-      /* הוספת שוליים פנימיים וירטואליים */
-      margin-right: -10%; 
+      transform-origin: center center;
+    }
+
+    /* --- כאן מגיע התיקון לטלפון --- */
+    @media (max-width: 768px) {
+      iframe {
+        /* בטלפון אנחנו צריכים שטח עבודה רחב יותר כדי שכל העמודות יכנסו בשורה */
+        width: 300%; 
+        height: 100%;
+        /* כיווץ אגרסיבי יותר כדי שה-300% יכנסו למסך קטן */
+        transform: scale(0.33); 
+        transform-origin: center center;
+      }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=2083135260&format=interactive"></iframe>
