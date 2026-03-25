@@ -1,45 +1,48 @@
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #fcfcfc;
-  }
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>👉🎁 Prizes Graph</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  iframe {
-    /* במקום 200%, נשתמש ברוחב שיאלץ את גוגל להצטמצם */
-    width: 100vw; 
-    height: 100vh;
-    border: none;
-    
-    /* כיווץ של 0.8 יכניס את השוליים פנימה */
-    transform: scale(0.9); 
-    transform-origin: center center;
-  }
-
-  /* תיקון ספציפי למובייל - כאן הקסם */
-  @media (max-width: 600px) {
-    iframe {
-      width: 160vw; /* נותן לגרף מרחב נשימה לרוחב */
-      height: 100vh;
-      transform: scale(0.6); /* ומכווץ אותו חזק כדי שכל העמודות יכנסו */
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #fcfcfc; /* צבע רקע שתואם לגרף */
     }
-  }
-</style>
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center; /* שומר על המכולה במרכז */
+      align-items: center;
+      overflow: hidden;
+    }
+
+    iframe {
+      /* נשתמש ברוחב גדול כדי שגוגל לא יצופף את העמודות */
+      width: 180%; 
+      height: 150%; 
+      border: none;
+      
+      /* הקסם: משנים את ה-scale ל-0.5 ומצמידים לימין */
+      transform: scale(0.55); 
+      transform-origin: center center; /* אפשר לנסות "right center" אם זה עדיין נחתך */
+      
+      /* הוספת שוליים פנימיים וירטואליים */
+      margin-right: -10%; 
+    }
+  </style>
+</head>
 
 <body>
   <div class="container">
     <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=2083135260&format=interactive"></iframe>
   </div>
 </body>
+</html>
