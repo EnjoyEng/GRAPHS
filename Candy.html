@@ -1,55 +1,79 @@
 <!DOCTYPE html>
+
 <html lang="he">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>👉🎁 Prizes Graph</title>
+
+
+
+  <!-- 🔥 קריטי למובייל -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
   <style>
-    body, html {
+
+    body {
+
       margin: 0;
+
       padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden; /* מונע גלילה של כל הדף */
+
     }
 
-    .container {
-      position: relative;
+
+
+  .container {
+
       width: 100vw;
+
       height: 100vh;
+
+      overflow: hidden; /* מונע הופעת פסי גלילה */
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
-      overflow: hidden;
+
     }
+
+
 
     iframe {
-      /* במקום אחוזים משוגעים, נשתמש בערכים שמתאימים בדיוק ל-Scale */
-      width: 100vw;
-      height: 100vh;
+
+      width: 200%; /* מגדילים את שטח העבודה של האייפרים */
+
+      height: 200%;
+
       border: none;
-      
-      /* נסי להקטין את ה-scale ל-0.8. זה יכווץ את תוכן הגרף פנימה */
-      transform: scale(0.85); 
+
+      transform: scale(0.5); /* מכווצים אותו ל-80% מהגודל המקורי */
+
       transform-origin: center center;
+
     }
 
-    /* תיקון ספציפי למובייל - אם הרוחב עדיין בעייתי */
-    @media (max-width: 600px) {
-      iframe {
-        width: 150vw; /* נותן לגרף קצת יותר מרחב פנימי */
-        height: 100vh;
-        transform: scale(0.65); /* אבל מכווץ אותו יותר חזק כדי שייכנס */
-      }
-    }
   </style>
+
 </head>
+
+
+
 <body>
+
   <div class="container">
-    <iframe 
-      scrolling="no" 
-      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=2083135260&format=interactive">
-    </iframe>
+
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=2083135260&format=interactive"></iframe>
+
   </div>
+
 </body>
+
 </html>
