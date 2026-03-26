@@ -21,10 +21,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative; /* מאפשר הצמדה מדויקת בתוך המכולה */
+      position: relative;
     }
 
-    /* הגדרות המחשב המקוריות שלך - נשארות כפי שהיו */
+    /* הגדרות המחשב המקוריות שלך - ללא שינוי */
     iframe {
       width: 180%; 
       height: 150%; 
@@ -34,22 +34,23 @@
       margin-right: -10%; 
     }
 
-    /* תיקון קריטי לטלפון */
+    /* התיקון המדויק לטלפון - כיווץ והזזה שמאלה */
     @media only screen and (max-width: 600px) {
       .container {
-        overflow-x: hidden; /* מונע גלילה מיותרת אבל שומר על התוכן */
-        display: block; /* משנה מ-flex כדי למנוע מירכוז כפוי שבורח */
+        display: block; 
       }
       
       iframe {
-        width: 160%; /* רוחב מספיק לעמודות מבלי "להשתגע" */
-        height: 100%;
-        transform: scale(0.62); /* הגדלה קלה כדי שהטקסט יהיה קריא */
-        transform-origin: top right; /* הצמדה לנקודה הימנית העליונה */
+        /* אנחנו מגדילים את הרוחב הווירטואלי כדי שהעמודות לא ימחצו */
+        width: 300%; 
+        height: 200%;
+        /* כיווץ משמעותי כדי שכל ה-300% ייכנסו למסך הקטן */
+        transform: scale(0.33); 
+        transform-origin: top right;
         position: absolute;
-        right: 0; /* מצמיד את הגרף לצד ימין של הטלפון */
+        right: 0; 
         top: 0;
-        margin-right: 0; /* מאפס את המרג'ין של המחשב */
+        margin-right: 0;
       }
     }
   </style>
