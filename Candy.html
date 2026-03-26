@@ -12,30 +12,41 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #fcfcfc; /* צבע רקע שתואם לגרף */
+      background-color: #fcfcfc;
     }
 
     .container {
       width: 100vw;
       height: 100vh;
       display: flex;
-      justify-content: center; /* שומר על המכולה במרכז */
+      justify-content: center;
       align-items: center;
       overflow: hidden;
     }
 
+    /* הגדרות ברירת מחדל - למחשב */
     iframe {
-      /* נשתמש ברוחב גדול כדי שגוגל לא יצופף את העמודות */
-      width: 180%; 
-      height: 150%; 
+      width: 100%;
+      height: 90%;
       border: none;
-      
-      /* הקסם: משנים את ה-scale ל-0.5 ומצמידים לימין */
-      transform: scale(0.55); 
-      transform-origin: center center; /* אפשר לנסות "right center" אם זה עדיין נחתך */
-      
-      /* הוספת שוליים פנימיים וירטואליים */
-      margin-right: -10%; 
+      transition: all 0.3s ease; /* מעבר חלק בין מצבים */
+    }
+
+    /* השורה שחיפשת: זיהוי טלפון (מסך קטן מ-600 פיקסלים) */
+    @media only screen and (max-width: 600px) {
+      .container {
+        align-items: flex-start; /* הצמדה למעלה בטלפון */
+        overflow-x: auto; /* מאפשר גלילה הצידה אם הגרף רחב */
+      }
+
+      iframe {
+        /* בטלפון אנחנו "מרחיבים" את ה-iframe וקצת מקטינים ב-scale */
+        width: 200%; 
+        height: 120%;
+        transform: scale(0.5); 
+        transform-origin: top right; /* הצמדה לימין (מתאים לעברית) */
+        margin-right: -50%; /* תיקון מיקום בגלל ה-scale */
+      }
     }
   </style>
 </head>
