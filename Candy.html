@@ -34,19 +34,20 @@
       margin-right: -10%; 
     }
 
-    /* כיווץ רוחב נוסף לטלפון */
+    /* תיקון לטלפון - הגדלת הגרף ומילוי המסך */
     @media only screen and (max-width: 600px) {
       .container {
         display: block; 
       }
       
       iframe {
-        /* הגדלת הרוחב הווירטואלי כדי שיהיה מקום לכל העמודות */
-        width: 550%; 
-        height: 180%; /* הגובה נשאר דומה כי אמרת שהוא סבבה */
+        /* צמצמנו את הרוחב הווירטואלי כדי שה-scale יהיה אפקטיבי יותר */
+        width: 380%; 
+        height: 160%; 
         
-        /* כיווץ משמעותי יותר של הרוחב */
-        transform: scale(0.18); 
+        /* הגדלנו את ה-scale ל-0.26 - זה יגרום לגרף להיראות גדול פי 1.5 מהקודם */
+        transform: scale(0.26); 
+        -webkit-transform: scale(0.26); /* לאייפון/ספארי */
         
         transform-origin: top right;
         position: absolute;
