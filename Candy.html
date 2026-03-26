@@ -11,20 +11,19 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       background-color: #fcfcfc;
     }
 
+    /* במחשב - הכל נשאר כפי שאהבת */
     .container {
       width: 100vw;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      overflow: hidden; 
     }
 
-    /* הגדרות המחשב המקוריות שלך - ללא שינוי */
     iframe {
       width: 180%; 
       height: 150%; 
@@ -34,25 +33,23 @@
       margin-right: -10%; 
     }
 
-    /* כיווץ נוסף להכנסת העמודות האדומות בטלפון */
+    /* התיקון החדש לטלפון - שיטת הגלילה */
     @media only screen and (max-width: 600px) {
       .container {
-        display: block; 
+        display: block;
+        overflow-x: auto; /* מאפשר גלילה הצידה */
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; /* גלילה חלקה באייפון */
       }
       
       iframe {
-        /* הגדלת הרוחב הווירטואלי כדי שיהיה מקום לעמודות האדומות */
-        width: 420%; 
-        height: 220%; /* הגבהתי מעט כדי לשמור על הפרופורציה */
-        
-        /* כיווץ חזק יותר כדי שכל ה-420% ייכנסו למסך הצר */
-        transform: scale(0.22); 
-        
+        /* כאן אנחנו נותנים לגרף רוחב קבוע וגדול מספיק לכל העמודות */
+        width: 1000px; 
+        height: 100vh;
+        transform: scale(0.8); /* זום הרבה יותר נעים לעין */
         transform-origin: top right;
-        position: absolute;
-        right: 0; 
-        top: 0;
         margin-right: 0;
+        position: relative;
       }
     }
   </style>
