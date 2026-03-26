@@ -34,20 +34,20 @@
       margin-right: -10%; 
     }
 
-    /* תיקון קריטי לטלפון - הכנסת העמודות האדומות */
+    /* התיקון הסופי - כיווץ קל נוסף כדי להכניס את פרס 4 */
     @media only screen and (max-width: 600px) {
       .container {
         display: block; 
       }
       
       iframe {
-        /* הגדלנו את הרוחב ל-450% כדי לתת מקום לעמודות האדומות */
-        width: 450%; 
-        height: 200%; /* הגבהנו מעט כדי לשמור על הפרופורציה */
+        /* הגדלנו ל-500% כדי להבטיח שיש מקום לכל העמודות בשמאל */
+        width: 500%; 
+        height: 200%; 
         
-        /* כיווץ חזק יותר כדי שכל ה-450% ייכנסו לרוחב הטלפון */
-        transform: scale(0.2); 
-        -webkit-transform: scale(0.2); /* לאייפון/ספארי */
+        /* הקטנו מ-0.2 ל-0.18 כדי "למשוך" את פרס 4 פנימה למסך */
+        transform: scale(0.18); 
+        -webkit-transform: scale(0.18); 
         
         transform-origin: top right;
         position: absolute;
