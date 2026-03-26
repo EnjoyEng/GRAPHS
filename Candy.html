@@ -34,18 +34,20 @@
       margin-right: -10%; 
     }
 
-    /* התיקון המדויק לטלפון - כיווץ והזזה שמאלה */
+    /* כיווץ רוחב נוסף לטלפון */
     @media only screen and (max-width: 600px) {
       .container {
         display: block; 
       }
       
       iframe {
-        /* אנחנו מגדילים את הרוחב הווירטואלי כדי שהעמודות לא ימחצו */
-        width: 300%; 
-        height: 200%;
-        /* כיווץ משמעותי כדי שכל ה-300% ייכנסו למסך הקטן */
-        transform: scale(0.33); 
+        /* הגדלת הרוחב הווירטואלי כדי שיהיה מקום לכל העמודות */
+        width: 350%; 
+        height: 180%; /* הגובה נשאר דומה כי אמרת שהוא סבבה */
+        
+        /* כיווץ משמעותי יותר של הרוחב */
+        transform: scale(0.28); 
+        
         transform-origin: top right;
         position: absolute;
         right: 0; 
