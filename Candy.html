@@ -35,26 +35,27 @@
     }
 
     /* התיקון הסופי - כיווץ קל נוסף כדי להכניס את פרס 4 */
-    @media only screen and (max-width: 600px) {
-      .container {
-        display: block; 
-      }
-      
-      iframe {
-        /* הגדלנו ל-500% כדי להבטיח שיש מקום לכל העמודות בשמאל */
-        width: 500%; 
-        height: 200%; 
-        
-        /* הקטנו מ-0.2 ל-0.18 כדי "למשוך" את פרס 4 פנימה למסך */
-        transform: scale(0.18); 
-        -webkit-transform: scale(0.18); 
-        
-        transform-origin: top right;
-        position: absolute;
-        right: 0; 
-        top: 0;
-        margin-right: 0;
-      }
+@media only screen and (max-width: 600px) {
+  .container {
+    display: block; 
+  }
+  
+  iframe {
+    /* הורדנו מעט את הרוחב כדי שהזום יתמקד בגרף */
+    width: 460%; 
+    height: 180%; 
+    
+    /* הגדלנו את ה-scale כדי שהגרף "יתנפח" וימלא את השוליים הלבנים */
+    transform: scale(0.22); 
+    -webkit-transform: scale(0.22); 
+    
+    transform-origin: top right;
+    position: absolute;
+    right: 0; 
+    top: 0;
+    margin-right: 0;
+  }
+}
     }
   </style>
 </head>
