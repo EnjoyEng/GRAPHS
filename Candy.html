@@ -21,10 +21,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      position: relative; /* מאפשר הצמדה מדויקת בתוך המכולה */
     }
 
-    /* החלק שביקשת לא לשנות - הגדרות המחשב המקוריות שלך */
+    /* הגדרות המחשב המקוריות שלך - נשארות כפי שהיו */
     iframe {
       width: 180%; 
       height: 150%; 
@@ -34,19 +34,26 @@
       margin-right: -10%; 
     }
 
-    /* החלק החדש - קורה רק בטלפון (מסך צר מ-600 פיקסלים) */
+    /* תיקון קריטי לטלפון */
     @media only screen and (max-width: 600px) {
+      .container {
+        overflow-x: hidden; /* מונע גלילה מיותרת אבל שומר על התוכן */
+        display: block; /* משנה מ-flex כדי למנוע מירכוז כפוי שבורח */
+      }
+      
       iframe {
-        width: 280%; /* הגדלה משמעותית כדי שהעמודות לא יצטופפו */
-        height: 180%;
-        transform: scale(0.35); /* כיווץ חזק יותר כדי שייכנס לרוחב הטלפון */
-        transform-origin: top right; /* הצמדה לימין כי הגרף בעברית */
-        margin-right: -90%; /* משיכה חזקה שמאלה כדי למרכז בתוך הנייד */
+        width: 160%; /* רוחב מספיק לעמודות מבלי "להשתגע" */
+        height: 100%;
+        transform: scale(0.62); /* הגדלה קלה כדי שהטקסט יהיה קריא */
+        transform-origin: top right; /* הצמדה לנקודה הימנית העליונה */
+        position: absolute;
+        right: 0; /* מצמיד את הגרף לצד ימין של הטלפון */
+        top: 0;
+        margin-right: 0; /* מאפס את המרג'ין של המחשב */
       }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=2083135260&format=interactive"></iframe>
