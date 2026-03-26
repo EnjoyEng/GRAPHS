@@ -24,7 +24,7 @@
       position: relative;
     }
 
-    /* הגדרות המחשב המקוריות שלך - ללא שינוי */
+    /* הגדרות המחשב המקוריות שלך */
     iframe {
       width: 180%; 
       height: 150%; 
@@ -34,29 +34,24 @@
       margin-right: -10%; 
     }
 
-    /* התיקון הסופי - כיווץ קל נוסף כדי להכניס את פרס 4 */
-@media only screen and (max-width: 600px) {
-  .container {
-    display: block; 
-  }
-  
-  iframe {
-    /* הורדנו מעט את הרוחב כדי שהזום יתמקד בגרף */
-    width: 460%; 
-    height: 180%; 
-    
-    /* הגדלנו את ה-scale כדי שהגרף "יתנפח" וימלא את השוליים הלבנים */
-    transform: scale(0.22); 
-    -webkit-transform: scale(0.22); 
-    
-    transform-origin: top right;
-    position: absolute;
-    right: 0; 
-    top: 0;
-    margin-right: 0;
-  }
-}
-    }
+    /* התיקון למילוי השוליים הלבנים בטלפון */
+    @media only screen and (max-width: 600px) {
+      .container {
+        display: block; 
+      }
+      
+      iframe {
+        width: 460%; 
+        height: 180%; 
+        transform: scale(0.22); 
+        -webkit-transform: scale(0.22); 
+        transform-origin: top right;
+        position: absolute;
+        right: 0; 
+        top: 0;
+        margin-right: 0;
+      }
+    } /* כאן נסגר ה-media query */
   </style>
 </head>
 <body>
