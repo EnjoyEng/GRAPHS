@@ -24,44 +24,40 @@
       position: relative;
     }
 
-    /* הגדרות המחשב המקוריות שלך - ללא שינוי */
+    /* שיפור למחשב - הגדלת הרוחב כדי למנוע חיתוך כשיש הרבה עמודות */
     iframe {
-      width: 180%; 
+      width: 220%; /* הגדלנו מ-180% ל-220% כדי לתת עוד מרחב לעמודות */
       height: 150%; 
       border: none;
-      transform: scale(0.55); 
+      transform: scale(0.45); /* הקטנו מעט מ-0.55 כדי שייכנס יותר תוכן */
       transform-origin: center center;
-      margin-right: -10%; 
     }
 
-    /* התיקון הסופי - כיווץ קל נוסף כדי להכניס את פרס 4 */
+    /* התיקון לנייד - גמישות לפי כמות העמודות */
     @media only screen and (max-width: 600px) {
       .container {
         display: block; 
       }
       
       iframe {
-        /* הגדלנו ל-500% כדי להבטיח שיש מקום לכל העמודות בשמאל */
-        width: 500%; 
-        height: 200%; 
+        width: 600%; /* הגדלנו מעט כדי למנוע חיתוך מימין */
+        height: 250%; 
         
-        /* הקטנו מ-0.2 ל-0.18 כדי "למשוך" את פרס 4 פנימה למסך */
-        transform: scale(0.18); 
-        -webkit-transform: scale(0.18); 
+        /* שינוי ה-scale ל-0.16 יכניס את העמודה השמינית בקלות */
+        transform: scale(0.16); 
+        -webkit-transform: scale(0.16); 
         
         transform-origin: top right;
         position: absolute;
-        right: 0; 
+        right: -20px; /* הזזה קלה שמאלה כדי שהקצה הימני (פרס 4) לא ייצמד לדופן */
         top: 0;
-        margin-right: 0;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=1844142180&format=interactive"></iframe>  </div>
+    <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=1844142180&format=interactive"></iframe>
   </div>
 </body>
 </html>
-
