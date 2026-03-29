@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>👉🎁 Prizes Graph</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body, html {
@@ -11,53 +10,28 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
-      background-color: #fcfcfc;
+      overflow: hidden; /* מונע פסי גלילה מיותרים */
     }
 
     .container {
-      width: 100vw;
-      height: 100vh;
+      width: 100%; /* שיניתי מ-50% כדי שהגרף יתפוס את כל רוחב המסך */
+      height: 100vh; 
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
     }
 
-    /* שיפור למחשב - הגדלת הרוחב כדי למנוע חיתוך כשיש הרבה עמודות */
     iframe {
-      width: 220%; /* הגדלנו מ-180% ל-220% כדי לתת עוד מרחב לעמודות */
-      height: 150%; 
+      width: 100%;
+      height: 100%;
       border: none;
-      transform: scale(0.45); /* הקטנו מעט מ-0.55 כדי שייכנס יותר תוכן */
-      transform-origin: center center;
-    }
-
-    /* התיקון לנייד - גמישות לפי כמות העמודות */
-    @media only screen and (max-width: 600px) {
-      .container {
-        display: block; 
-      }
-      
-      iframe {
-        width: 600%; /* הגדלנו מעט כדי למנוע חיתוך מימין */
-        height: 250%; 
-        
-        /* שינוי ה-scale ל-0.16 יכניס את העמודה השמינית בקלות */
-        transform: scale(0.16); 
-        -webkit-transform: scale(0.16); 
-        
-        transform-origin: top right;
-        position: absolute;
-        right: -20px; /* הזזה קלה שמאלה כדי שהקצה הימני (פרס 4) לא ייצמד לדופן */
-        top: 0;
-      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=1844142180&format=interactive"></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT19kOZGAJsKVeMmF1oIn5sjRm18MnOKs6Ucm1N-8QYGWJ85eLTktyXTS2UiS0u_3LreAsUprDGBFr1/pubchart?oid=1844142180&format=interactive"></iframe>
   </div>
 </body>
 </html>
