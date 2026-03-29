@@ -24,33 +24,36 @@
       position: relative;
     }
 
-    /* שיפור למחשב - הגדלת הרוחב כדי למנוע חיתוך כשיש הרבה עמודות */
+    /* הגדרות המחשב המקוריות שלך - ללא שינוי */
     iframe {
-      width: 220%; /* הגדלנו מ-180% ל-220% כדי לתת עוד מרחב לעמודות */
+      width: 180%; 
       height: 150%; 
       border: none;
-      transform: scale(0.45); /* הקטנו מעט מ-0.55 כדי שייכנס יותר תוכן */
+      transform: scale(0.55); 
       transform-origin: center center;
+      margin-right: -10%; 
     }
 
-    /* התיקון לנייד - גמישות לפי כמות העמודות */
+    /* התיקון הסופי - כיווץ קל נוסף כדי להכניס את פרס 4 */
     @media only screen and (max-width: 600px) {
       .container {
         display: block; 
       }
       
       iframe {
-        width: 600%; /* הגדלנו מעט כדי למנוע חיתוך מימין */
-        height: 250%; 
+        /* הגדלנו ל-500% כדי להבטיח שיש מקום לכל העמודות בשמאל */
+        width: 500%; 
+        height: 200%; 
         
-        /* שינוי ה-scale ל-0.16 יכניס את העמודה השמינית בקלות */
-        transform: scale(0.16); 
-        -webkit-transform: scale(0.16); 
+        /* הקטנו מ-0.2 ל-0.18 כדי "למשוך" את פרס 4 פנימה למסך */
+        transform: scale(0.18); 
+        -webkit-transform: scale(0.18); 
         
         transform-origin: top right;
         position: absolute;
-        right: -20px; /* הזזה קלה שמאלה כדי שהקצה הימני (פרס 4) לא ייצמד לדופן */
+        right: 0; 
         top: 0;
+        margin-right: 0;
       }
     }
   </style>
