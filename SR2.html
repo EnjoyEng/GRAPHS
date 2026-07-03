@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👉🎁 Prizes Graph</title>
+  
+  <style>
+    /* איפוס שוליים ויישור הגרף לאמצע המסך במדויק */
+    body {
+      margin: 0;
+      padding: 15px; /* קצת מרווח "לנשום" מהצדדים */
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center; /* יישור לאמצע אופקית */
+      align-items: center; /* יישור לאמצע אנכית */
+      min-height: 100vh; /* תופס את כל גובה המסך */
+      box-sizing: border-box;
+    }
+    
+    /* פקודת הקסם שמתאימה את התמונה לכל מסך */
+    img {
+      max-width: 100%; /* התמונה בחיים לא תפרוץ את גבולות המסך */
+      height: auto; /* שומר על הפרופורציות של הגרף */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* צל עדין שנותן מראה של כרטיסייה */
+      border-radius: 8px; /* פינות מעוגלות */
+      background-color: white; /* רקע לבן לגרף עצמו */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- שאבנו את הגרף כתמונה (שימי לב למילה image בסוף הקישור) -->
+  <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRVhljX8ayzmBgCP5GFCwEVxsIqVROX6A9MbuIF0S4LAyxKeWhEh7THBaRmZExmbv6rYe13dUMH0f-6/pubchart?oid=816378811&format=image" alt="גרף פרסים">
+
+</body>
+</html>
