@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>👉🎁 Prizes Graph</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #fcfcfc;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* הגדרות המחשב המקוריות שלך - ללא שינוי */
+    iframe {
+      width: 180%; 
+      height: 150%; 
+      border: none;
+      transform: scale(0.55); 
+      transform-origin: center center;
+      margin-right: -10%; 
+    }
+
+    /* התיקון הסופי - כיווץ קל נוסף כדי להכניס את פרס 4 */
+    @media only screen and (max-width: 600px) {
+      .container {
+        display: block; 
+      }
+      
+      iframe {
+        /* הגדלנו ל-500% כדי להבטיח שיש מקום לכל העמודות בשמאל */
+        width: 500%; 
+        height: 200%; 
+        
+        /* הקטנו מ-0.2 ל-0.18 כדי "למשוך" את פרס 4 פנימה למסך */
+        transform: scale(0.18); 
+        -webkit-transform: scale(0.18); 
+        
+        transform-origin: top right;
+        position: absolute;
+        right: 0; 
+        top: 0;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <iframe scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTr4jq3YGm8WK9R59gRpifj6yrpKEyjFd1jYTTBGbzpR_Nxn1fmy6g951Ho_JwEh_UfE_Te0A-F6G1d/pubchart?oid=1813823196&format=interactive"></iframe>
+  </div>
+</body>
+</html>
